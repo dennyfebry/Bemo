@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Bemo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/framework7.min.css">
+    <link rel="stylesheet" type="text/css" href="css/loading.css">
+    <script src="http://dennyfebrygo.com/bemo/www/js/jquery-3.1.1.min.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/beranda.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/cek-pesanan.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/proses.js"></script>
+    <script>
+        $(document).ready(function () { //menunggu sampai dokumen siap untuk menjalankan fungsi di dalamnya
+            if (sessionStorage.getItem("hakAkses") === null) { //ntuk mengecek apakal variabel name pada storage kosong atau tidak 
+                window.location.href = "masuk.html"; //jika kosong jika variable name dalam localstorage kosong maka akan diarahkan menuju index.html
+            } else if (sessionStorage.getItem("cek-pesanan") == '0') {
+                window.location.href = "ambil-antrian.html";
+            } else if (sessionStorage.getItem("cek-pesanan") == '2') {
+                window.location.href = "pesanan.html";
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Views -->
+    <div id="normal" class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <!-- <a href="antrian.html" class="link"><img src="img/arrow.png" class="img-responsive" alt=""  width="40"></a>
+                        <h4>Booking Detail</h4>  -->
+                    </div>
+                    <div class="center sliding">
+                        <a href="beranda.html" class="link"><img id="logo" class="img-responsive" alt="" height="40"
+                                width="100"></a>
+                    </div>
+                    <div class="right"></div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="high">
+                            <div class="container">
+                                <!-- json response will be here -->
+                                <div id="errorDiv"></div>
+                                <!-- json response will be here -->
+                                <div class='loader'>
+                                    <div class='loader--dot'></div>
+                                    <div class='loader--dot'></div>
+                                    <div class='loader--dot'></div>
+                                    <div class='loader--dot'></div>
+                                    <div class='loader--dot'></div>
+                                    <div class='loader--dot'></div>
+                                    <div class='loader--text'></div><br><br><br><br><br>
+                                    <div class="form-group col-lg-6">
+                                        <input id="batal" type="submit" value="Membatalkan" class="button"
+                                            onclick="batal();">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            <div class="toolbar">
+                <div id="footer">
+                    <div class="toolbar-inner">
+                        <!-- Toolbar links -->
+                        <a href="beranda.html" class="link"><img src="img/beranda.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="proses.html" class="link"><img src="img/antrian.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="darurat.html" class="link"><img src="img/darurat.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="masuk.html" class="link"><img src="img/akun.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                    </div>
+                </div>
+                <div id="user">
+                    <div class="toolbar-inner">
+                        <!-- Toolbar links -->
+                        <a href="beranda.html" class="link"><img src="img/beranda.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="proses.html" class="link"><img src="img/antrian.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="darurat.html" class="link"><img src="img/darurat.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="profil.html" class="link"><img src="img/akun.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                    </div>
+                </div>
+                <div id="montir">
+                    <div class="toolbar-inner">
+                        <!-- Toolbar links -->
+                        <a href="beranda.html" class="link"><img src="img/beranda.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="proses.html" class="link"><img src="img/antrian.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="darurat.html" class="link"><img src="img/darurat.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="profil.html" class="link"><img src="img/akun.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

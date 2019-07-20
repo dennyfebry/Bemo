@@ -1,0 +1,136 @@
+<!--
+    BROWSE BENGKEL MOBILE YANG SUDAH MASUK
+-->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Bemo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/framework7.min.css">
+    <link rel="stylesheet" type="text/css" href="css/antrian.css">
+    <script src="http://dennyfebrygo.com/bemo/www/js/jquery-3.1.1.min.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/beranda.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/profil.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/riwayat.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/cek-pesanan.js"></script>
+    <script>
+        $(document).ready(function () { //menunggu sampai dokumen siap untuk menjalankan fungsi di dalamnya
+            if (sessionStorage.getItem("hakAkses") === null) { //ntuk mengecek apakal variabel name pada storage kosong atau tidak 
+                alert("Kamu harus masuk terlebih dahulu!");
+                window.location = "masuk.html"; //jika kosong jika variable name dalam localstorage kosong maka akan diarahkan menuju index.html
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="left"></div>
+                    <div class="center sliding">
+                        <a href="beranda.html" class="link"><img id="logo" class="img-responsive" alt="" height="40"
+                                width="100"></a>
+                    </div>
+                    <div class="right"></div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="high">
+                            <div class="container">
+                                <div id="user">
+                                    <div class="box">
+                                        <!-- <div class="profil" style="background-image: url(img/testi3.png)"></div> -->
+                                        <h4>
+                                            <center><b>Profil</b></center>
+                                        </h4>
+                                        <div class="textprofile">Nama &nbsp;: <b id="userNama"></b></div>
+                                        <div class="textprofile">Email &nbsp;: <b id="userEmail"></b></div>
+                                        <div class="textprofile">Alamat &nbsp;: <b id="userAlamat"></b></div>
+                                        <div class="textprofile">No HP &nbsp;: <b id="userNoHP"></b></div>
+                                        <div class="textprofile">Merk Mobil &nbsp;: <b id="userMerkMobil"></b></div>
+                                        <div class="textprofile">Model Mobil &nbsp;: <b id="userModelMobil"></b></div>
+                                        <div class="textprofile">No Kendaraan &nbsp;: <b><b id="a_plat"></b>-<b
+                                                    id="b_plat"></b>-<b id="c_plat"></b></b></div>
+                                        <br>
+                                        <a href="ubah-profil.html" style="margin: 0 0 0 220px;">Ubah Profil</a>
+                                    </div>
+                                    <br>
+                                    <div id="riwayat"></div>
+                                </div>
+                                <div id="montir">
+                                    <div class="box">
+                                        <!-- <div class="profil" style="background-image: url(img/testi3.png)"></div> -->
+                                        <h4>
+                                            <center><b>Profil</b></center>
+                                        </h4>
+                                        <div class="textprofile">Nama &nbsp;: <b id="montirnama"></b></div>
+                                        <div class="textprofile">Email &nbsp;: <b id="montiremail"></b></div>
+                                        <div class="textprofile">Alamat &nbsp;: <b id="montiralamat"></b></div>
+                                        <div class="textprofile">No HP &nbsp;: <b id="montirno_hp"></b></div>
+                                        <br>
+                                        <a href="ubah-profil.html" style="margin: 0 0 0 220px;">Ubah Profil</a>
+                                    </div>
+                                    <br>
+                                    <div id="riwayat-montir"></div>
+                                </div>
+                                <br><br><br>
+                                <!-- <form id="logout" role="form" action="masuk.html"> -->
+                                <div class="form-group col-lg-6">
+                                    <input id="logout" type="submit" value="Keluar" class="button" onclick="logout();">
+                                </div>
+                                <!-- </form>  -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            <div class="toolbar">
+                <div id="user">
+                    <div class="toolbar-inner">
+                        <!-- Toolbar links -->
+                        <a href="beranda.html" class="link"><img src="img/beranda.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="ambil-antrian.html" class="link"><img src="img/antrian.png" class="img-responsive"
+                                alt="" height="40" width="40"></a>
+                        <a href="darurat.html" class="link"><img src="img/darurat.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="profil.html" class="link"><img src="img/akun.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                    </div>
+                </div>
+                <div id="montir">
+                    <div class="toolbar-inner">
+                        <!-- Toolbar links -->
+                        <a href="beranda.html" class="link"><img src="img/beranda.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="ambil-antrian.html" class="link"><img src="img/antrian.png" class="img-responsive"
+                                alt="" height="40" width="40"></a>
+                        <a href="darurat.html" class="link"><img src="img/darurat.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="profil.html" class="link"><img src="img/akun.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Bemo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/framework7.min.css">
+    <script src="http://dennyfebrygo.com/bemo/www/js/jquery-3.1.1.min.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/jquery.validate.min.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/beranda.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/masuk.js"></script>
+</head>
+
+<body>
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="left"></div>
+                    <div class="center sliding">
+                        <a href="beranda.html" class="link"><img id="logo" class="img-responsive" alt="" height="40"
+                                width="100"></a>
+                    </div>
+                    <div class="right"></div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="high">
+                            <div class="container">
+                                <center>
+                                    <div class="top">
+                                        <table border="0" cellspacing="5">
+                                            <tr>
+                                                <h4><b>Masuk</b></h4>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </center>
+                                </br>
+                                <form method="post" id="login-form" autocomplete="off">
+                                    <div class="content">
+                                        <div class="form-body">
+                                            <!-- json response will be here -->
+                                            <div id="errorDiv"></div>
+                                            <!-- json response will be here -->
+                                            <div class="form-group col-lg-6">
+                                                <label for="">Email</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><span
+                                                            class="glyphicon glyphicon-envelope"></span></div>
+                                                    <input name="email" id="user_email" type="text" class="form-control"
+                                                        placeholder="Email" maxlength="50" />
+                                                </div>
+                                                <span class="help-block" id="error"></span>
+                                            </div>
+                                            <!-- <div class="row"> -->
+                                            <div class="form-group col-lg-6">
+                                                <label for="">Password</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><span
+                                                            class="glyphicon glyphicon-lock"></span></div>
+                                                    <input name="password" id="user_password" type="password"
+                                                        class="form-control" placeholder="Password" />
+                                                </div>
+                                                <span class="help-block" id="error"></span>
+                                                <!-- </div>      -->
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <!-- <input id="btn-signin" type="submit" class="button" name="submit" value="SIGN IN" /> -->
+                                            <input id="btn-signin" type="submit" class="button" name="submit"
+                                                value="Masuk">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <a href="daftar.html" class="button">Daftar</a>
+                                        </div>
+                                        <center>
+                                            <a href="lupa-password.html">Lupa password?</a>
+                                        </center>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+
+            <div class="toolbar">
+                <div id="footer">
+                    <div class="toolbar-inner">
+                        <!-- Toolbar links -->
+                        <a href="beranda.html" class="link"><img src="img/beranda.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="ambil-antrian.html" class="link"><img src="img/antrian.png" class="img-responsive"
+                                alt="" height="40" width="40"></a>
+                        <a href="darurat.html" class="link"><img src="img/darurat.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="masuk.html" class="link"><img src="img/akun.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

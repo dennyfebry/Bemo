@@ -1,0 +1,4 @@
+#Sun May 26 14:42:46 ICT 2019
+base.0=D\:\\Dropbox\\Kuliah\\Skipsi\\_Denny\\aplikasi\\userbemo\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

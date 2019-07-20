@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Bemo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/framework7.min.css">
+    <link rel="stylesheet" type="text/css" href="css/antrian.css">
+    <script src="http://dennyfebrygo.com/bemo/www/js/jquery-3.1.1.min.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/jquery.validate.min.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/ubah-profil.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/daftar-mobil.js"></script>
+    <script>
+        $(document).ready(function () { //menunggu sampai dokumen siap untuk menjalankan fungsi di dalamnya
+            if (sessionStorage.getItem("hakAkses") === null) { //ntuk mengecek apakal variabel name pada storage kosong atau tidak 
+                alert("Kamu harus masuk terlebih dahulu!");
+                window.location = "masuk.html"; //jika kosong jika variable name dalam localstorage kosong maka akan diarahkan menuju index.html
+            }
+
+            if (sessionStorage.getItem("alamat") != 'null') {
+                var h4 = "Ubah Profil";
+                $('#h4').html(h4);
+            } else if (sessionStorage.getItem("alamat") == 'null') {
+                var h4 = "Tambah Profil";
+                $('#h4').html(h4);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <a href="profil.html" class="link"><img src="img/arrow.png" class="img-responsive" alt=""
+                                width="40"></a>
+                        <h4 id="h4"> </h4>
+                    </div>
+                    <div class="center sliding"></div>
+                    <div class="right"></div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="high">
+                            <div class="container">
+                                <form method="post" id="update-form" autocomplete="off">
+                                    <div class="content">
+                                        <div class="form-body">
+                                            <!-- json response will be here -->
+                                            <div id="errorDiv"></div>
+                                            <!-- json response will be here -->
+                                            <input name="user_id" type="hidden" id="user_id">
+
+                                            <div class="form-group col-lg-6">
+                                                <label for="">Nama</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><span
+                                                            class="glyphicon glyphicon-user"></span></div>
+                                                    <input name="nama" type="text" id="nama" class="form-control"
+                                                        placeholder="Nama" maxlength="40" autofocus="true">
+                                                </div>
+                                                <span class="help-block" id="error"></span>
+                                            </div>
+
+                                            <div class="form-group col-lg-6">
+                                                <label for="">Email</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><span
+                                                            class="glyphicon glyphicon-envelope"></span></div>
+                                                    <input name="email" id="email" type="text" class="form-control"
+                                                        placeholder="Email" maxlength="50" disabled="true">
+                                                </div>
+                                                <span class="help-block" id="error"></span>
+                                            </div>
+
+                                            <div class="form-group col-lg-6">
+                                                <label for="">Alamat</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><span
+                                                            class="glyphicon glyphicon-map-marker"></span></div>
+                                                    <input name="alamat" type="text" id="alamat" class="form-control"
+                                                        placeholder="Alamat" maxlength="40" autofocus="true">
+                                                </div>
+                                                <span class="help-block" id="error"></span>
+                                            </div>
+
+                                            <div class="form-group col-lg-6">
+                                                <label for="">No HP</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><span
+                                                            class="glyphicon glyphicon-earphone"></span></div>
+                                                    <input name="no_hp" id="no_hp" type="text" class="form-control"
+                                                        placeholder="No HP" maxlength="50">
+                                                </div>
+                                                <span class="help-block" id="error"></span>
+                                            </div>
+
+                                            <div id="user">
+                                                <div class="form-group col-lg-6">
+                                                    <label for="">Merk Mobil</label>
+                                                    <div class="input-group"></div>
+                                                    <select name='merk_mobil' id='merk_mobil' class='form-control'
+                                                        onchange="populate(this.id,'model_mobil')">
+                                                        <option value=''>Pilih Merk</option>
+                                                        <option value='Honda'>Honda</option>
+                                                        <option value='Toyota'>Toyota</option>
+                                                        <option value='Nissan'>Nissan</option>
+                                                        <option value='Suzuki'>Suzuki</option>
+                                                        <option value='Daihatsu'>Daihatsu</option>
+                                                        <option value='Mazda'>Mazda</option>
+                                                    </select>
+                                                    <span class="help-block" id="error"></span>
+                                                </div>
+
+                                                <div class="form-group col-lg-6">
+                                                    <label for="">Model Mobil</label>
+                                                    <div class="input-group"></div>
+                                                    <select name='model_mobil' id='model_mobil' class='form-control'>
+                                                    </select>
+                                                    <span class="help-block" id="error"></span>
+                                                </div>
+
+                                                <div class="form-group col-lg-6">
+                                                    <label for="">No Kendaraan</label>
+                                                    <div class="input-group">
+                                                        <!-- <div class="input-group-addon"><span
+                                                                class="glyphicon glyphicon-triangle-right"></span></div> -->
+                                                        <!-- <div class="col-xs-4"> -->
+                                                            <input name="a_plat" type="text" id="a_plat"
+                                                            placeholder="Ex : B" maxlength="4" autofocus="true"
+                                                            size="4">
+                                                        <!-- <div id="plat"></div> -->
+                                                        <!-- </div> -->
+                                                        <a>-</a>
+                                                        <!-- <div class="col-xs-5"> -->
+                                                        <input name="b_plat" type="text" id="b_plat"
+                                                            placeholder="Ex : 2222" maxlength="4" autofocus="true"
+                                                            size="4">
+                                                        <!-- </div> - -->
+                                                        <a>-</a>
+                                                        <!-- <div class="col-xs-4"> -->
+                                                        <input name="c_plat" type="text" id="c_plat"
+                                                            placeholder="Ex : VEO" maxlength="3" autofocus="true"
+                                                            size="4">
+                                                        <!-- </div> -->
+
+                                                    </div>
+                                                    <span class="help-block" id="error"></span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <br /><br />
+                                        <div class="form-group col-lg-6">
+                                            <input id="btn-update" type="submit" class="button" name="submit"
+                                                value="Simpan" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            <div class="toolbar">
+                <div id="user">
+                    <div class="toolbar-inner">
+                        <!-- Toolbar links -->
+                        <a href="beranda.html" class="link"><img src="img/beranda.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="ambil-antrian.html" class="link"><img src="img/antrian.png" class="img-responsive"
+                                alt="" height="40" width="40"></a>
+                        <a href="darurat.html" class="link"><img src="img/darurat.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="profil.html" class="link"><img src="img/akun.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                    </div>
+                </div>
+                <div id="montir">
+                    <div class="toolbar-inner">
+                        <!-- Toolbar links -->
+                        <a href="beranda.html" class="link"><img src="img/beranda.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="antrian.html" class="link"><img src="img/antrian.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="darurat.html" class="link"><img src="img/darurat.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="profil.html" class="link"><img src="img/akun.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

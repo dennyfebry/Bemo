@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Bemo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/framework7.min.css">
+    <link rel="stylesheet" type="text/css" href="css/antrian.css">
+    <script src="http://dennyfebrygo.com/bemo/www/js/jquery-3.1.1.min.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/jquery.validate.min.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/konfirmasi.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/selesai.js"></script>
+    <script>
+        $(document).ready(function () { //menunggu sampai dokumen siap untuk menjalankan fungsi di dalamnya
+            if (sessionStorage.getItem("hakAkses") === null) { //ntuk mengecek apakal variabel name pada storage kosong atau tidak 
+                alert("Kamu harus masuk terlebih dahulu!");
+                window.location = "masuk.html"; //jika kosong jika variable name dalam localstorage kosong maka akan diarahkan menuju index.html
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <a href="antrian.html" class="link"><img src="img/arrow.png" class="img-responsive" alt=""
+                                width="40"></a>
+                        <h4>Antrian Lain</h4>
+                    </div>
+                    <div class="center sliding"></div>
+                    <div class="right"></div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="high">
+                            <div class="container">
+                                <form method="post" id="selesai-form" autocomplete="off">
+                                    <div class="content">
+                                        <div class="form-body">
+                                            <div id="errorDiv"></div>
+                                            <input name="pesanan_id" type="hidden" id="pesanan_id">
+                                            <div class="form-group col-lg-6">
+                                                <label for="">Kode Antrian</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><span
+                                                            class="glyphicon glyphicon-user"></span></div>
+                                                    <input name="kode" type="text" id="kode" class="form-control"
+                                                        placeholder="Kode Antrian" maxlength="40" autofocus="true"
+                                                        disabled="true">
+                                                </div>
+                                                <span class="help-block" id="error"></span>
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <label for="">Nama</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><span
+                                                            class="glyphicon glyphicon-user"></span></div>
+                                                    <input name="nama" type="text" id="nama" class="form-control"
+                                                        placeholder="Nama" maxlength="40" autofocus="true"
+                                                        disabled="true">
+                                                </div>
+                                                <span class="help-block" id="error"></span>
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <label for="">No Kendaraan</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><span
+                                                            class="glyphicon glyphicon-user"></span></div>
+                                                    <input name="no_kendaraan" id="no_kendaraan" type="text"
+                                                        class="form-control" placeholder="No Kendaraan" autofocus="true"
+                                                        disabled="true">
+                                                </div>
+                                                <span class="help-block" id="error"></span>
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <label for="">Tanggal Masuk</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><span
+                                                            class="glyphicon glyphicon-user"></span></div>
+                                                    <input name="tgl_masuk" id="tgl_masuk" type="date"
+                                                        class="form-control" placeholder="Tanggal Masuk"
+                                                        autofocus="true" disabled="true">
+                                                </div>
+                                                <span class="help-block" id="error"></span>
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <label for="">Keterangan</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><span
+                                                            class="glyphicon glyphicon-user"></span></div>
+                                                    <input name="keterangan" type="text" id="keterangan"
+                                                        class="form-control" placeholder="Keterangan" autofocus="true"
+                                                        disabled="true">
+                                                </div>
+                                                <span class="help-block" id="error"></span>
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <label for="">Tanggal Keluar</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><span
+                                                            class="glyphicon glyphicon-user"></span></div>
+                                                    <input name="tgl_keluar" id="tgl_keluar" type="date"
+                                                        class="form-control" placeholder="Tanggal Keluar"
+                                                        autofocus="true" disabled="true">
+                                                </div>
+                                                <span class="help-block" id="error"></span>
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <label for="">Waktu Mulai</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><span
+                                                            class="glyphicon glyphicon-user"></span></div>
+                                                    <input name="wkt_mulai" id="wkt_mulai" type="time"
+                                                        class="form-control" placeholder="Waktu Mulai" disabled="true">
+                                                </div>
+                                                <span class="help-block" id="error"></span>
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <label for="">Waktu Selesai</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><span
+                                                            class="glyphicon glyphicon-user"></span></div>
+                                                    <input name="wkt_selesai" id="wkt_selesai" type="time"
+                                                        class="form-control" placeholder="Waktu Selesai">
+                                                </div>
+                                                <span class="help-block" id="error"></span>
+                                            </div>
+                                        </div>
+                                        <br /><br />
+                                        <div class="form-group col-lg-6">
+                                            <input id="btn-selesai" type="submit" class="button" name="submit"
+                                                value="Selesai" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            <div class="toolbar">
+                <div id="user">
+                    <div class="toolbar-inner">
+                        <!-- Toolbar links -->
+                        <a href="beranda.html" class="link"><img src="img/beranda.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="ambil-antrian.html" class="link"><img src="img/antrian.png" class="img-responsive"
+                                alt="" height="40" width="40"></a>
+                        <a href="darurat.html" class="link"><img src="img/darurat.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="profil.html" class="link"><img src="img/akun.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                    </div>
+                </div>
+                <div id="montir">
+                    <div class="toolbar-inner">
+                        <!-- Toolbar links -->
+                        <a href="beranda.html" class="link"><img src="img/beranda.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="antrian.html" class="link"><img src="img/antrian.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="darurat.html" class="link"><img src="img/darurat.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="profil.html" class="link"><img src="img/akun.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

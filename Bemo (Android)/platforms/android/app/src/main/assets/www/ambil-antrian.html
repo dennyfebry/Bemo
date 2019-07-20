@@ -1,0 +1,155 @@
+<!--
+    BROWSE BENGKEL MOBILE
+-->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Bemo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/framework7.min.css">
+    <link rel="stylesheet" type="text/css" href="css/antrian.css">
+    <script src="http://dennyfebrygo.com/bemo/www/js/jquery-3.1.1.min.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/jquery.validate.min.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/beranda.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/profil.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/daftar-montir.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/ambil-antrian.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/antrian.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/cek-pesanan.js"></script>
+    <script src="http://dennyfebrygo.com/bemo/www/js/jquery-ui.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () { //menunggu sampai dokumen siap untuk menjalankan fungsi di dalamnya
+            if (sessionStorage.getItem("hakAkses") === null) { //ntuk mengecek apakal variabel name pada storage kosong atau tidak 
+                alert("Kamu harus masuk terlebih dahulu!");
+                window.location.href = "masuk.html"; //jika kosong jika variable name dalam localstorage kosong maka akan diarahkan menuju index.html       
+            }
+            else if (sessionStorage.getItem("merk_mobil") == 'null' || sessionStorage.getItem("model_mobil") == 'null' || sessionStorage.getItem("no_kendaraan") == 'null') { //ntuk mengecek apakal variabel name pada storage kosong atau tidak 
+                alert("Kamu harus mengisi data terlebih dahulu!");
+                window.location.href = "ubah-profil.html"; //jika kosong jika variable name dalam localstorage kosong maka akan diarahkan menuju ubah-profil.html
+            } else if (sessionStorage.getItem("cek-pesanan") == '1') {
+                window.location.href = "proses.html";
+            } else if (sessionStorage.getItem("cek-pesanan") == '2') {
+                window.location.href = "pesanan.html";
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <!-- <a href="antrian.html" class="link"><img src="img/arrow.png" class="img-responsive" alt=""  width="40"></a>
+                        <h4>Ambil Antrian</h4>  -->
+                    </div>
+                    <div class="center sliding">
+                        <a href="beranda.html" class="link"><img id="logo" class="img-responsive" alt="" height="40"
+                                width="100"></a>
+                    </div>
+                    <div class="right"></div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="high">
+                            <div class="container">
+                                <div id="info"></div>
+                                <div class="textprofile">Nama &nbsp;: <b id="userNama"></b></div>
+                                <div class="textprofile">Merk Mobil &nbsp;: <b id="userMerkMobil"></b></div>
+                                <div class="textprofile">Model Mobil &nbsp;: <b id="userModelMobil"></b></div>
+                                <div class="textprofile">No Kendaraan &nbsp;: <b><b id="a_plat"></b>-<b
+                                            id="b_plat"></b>-<b id="c_plat"></b></b></div>
+                                <br>
+                                <form method="post" id="booking-form" autocomplete="off">
+                                    <div class="content">
+                                        <div class="form-body">
+                                            <!-- json response will be here -->
+                                            <div id="errorDiv"></div>
+                                            <!-- json response will be here -->
+                                            <input name="user_id" type="hidden" id="user_id">
+
+                                            <div class="form-group col-lg-6">
+                                                <label for="">Tanggal</label>
+                                                <div class="input-group"></div>
+                                                <input name="tgl_masuk" type="date" id="date" class="form-control"
+                                                    autofocus="true">
+                                                <span class="help-block" id="error"></span>
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <label for="">Keterangan</label>
+                                                <div class="input-group"></div>
+                                                <input name="keterangan" type="text" id="keterangan"
+                                                    class="form-control" placeholder="Keterangan" maxlength="40"
+                                                    autofocus="true">
+                                                <span class="help-block" id="error"></span>
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <label for="">Pilih Montir</label>
+                                                <div class="input-group"></div>
+                                                <div id="daftar-montir"></div>
+                                                <span class="help-block" id="error"></span>
+                                            </div>
+                                            <input name="status" type="hidden" id="status">
+                                        </div>
+                                        <br />
+                                        <div class="form-group col-lg-6">
+                                            <input id="btn-booking" type="submit" class="button" name="submit"
+                                                value="Ambil Antrian" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            <div class="toolbar">
+                <div id="user">
+                    <div class="toolbar-inner">
+                        <!-- Toolbar links -->
+                        <a href="beranda.html" class="link"><img src="img/beranda.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="ambil-antrian.html" class="link"><img src="img/antrian.png" class="img-responsive"
+                                alt="" height="40" width="40"></a>
+                        <a href="darurat.html" class="link"><img src="img/darurat.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="profil.html" class="link"><img src="img/akun.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                    </div>
+                </div>
+                <div id="montir">
+                    <div class="toolbar-inner">
+                        <!-- Toolbar links -->
+                        <a href="beranda.html" class="link"><img src="img/beranda.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="ambil-antrian.html" class="link"><img src="img/antrian.png" class="img-responsive"
+                                alt="" height="40" width="40"></a>
+                        <a href="darurat.html" class="link"><img src="img/darurat.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                        <a href="profil.html" class="link"><img src="img/akun.png" class="img-responsive" alt=""
+                                height="40" width="40"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

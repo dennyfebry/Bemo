@@ -1,0 +1,28 @@
+[03-Dec-2018 03:06:29 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1044): Access denied for user 'dene4871_denny'@'localhost' to database 'dene4871_bem' in /home/dene4871/public_html/bemo/config.php on line 2
+[03-Dec-2018 03:09:35 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1044): Access denied for user 'dene4871_denny'@'localhost' to database 'dene4871_bem' in /home/dene4871/public_html/bemo/config.php on line 2
+[03-Dec-2018 03:10:17 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1044): Access denied for user 'dene4871_denny'@'localhost' to database 'dene4871_bem' in /home/dene4871/public_html/bemo/config.php on line 2
+[03-Dec-2018 03:28:44 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 13
+[03-Dec-2018 03:28:44 Asia/Jakarta] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 14
+[03-Dec-2018 03:28:44 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 13
+[03-Dec-2018 03:28:44 Asia/Jakarta] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 14
+[03-Dec-2018 03:44:01 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 13
+[03-Dec-2018 03:44:01 Asia/Jakarta] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 14
+[03-Dec-2018 03:46:33 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 14
+[03-Dec-2018 03:46:33 Asia/Jakarta] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 15
+[03-Dec-2018 03:50:56 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 14
+[03-Dec-2018 03:50:56 Asia/Jakarta] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 15
+[03-Dec-2018 03:51:35 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 15
+[03-Dec-2018 03:51:35 Asia/Jakarta] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 16
+[03-Dec-2018 03:52:18 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 15
+[03-Dec-2018 03:52:18 Asia/Jakarta] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 16
+[03-Dec-2018 03:53:57 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 15
+[03-Dec-2018 03:53:57 Asia/Jakarta] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 16
+[03-Dec-2018 03:54:57 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 15
+[03-Dec-2018 03:54:57 Asia/Jakarta] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 16
+[03-Dec-2018 04:06:47 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 15
+[03-Dec-2018 04:06:47 Asia/Jakarta] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 16
+[03-Dec-2018 04:07:18 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 15
+[03-Dec-2018 04:07:18 Asia/Jakarta] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 16
+[03-Dec-2018 04:07:29 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 15
+[03-Dec-2018 04:07:29 Asia/Jakarta] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home/dene4871/public_html/bemo/login.php on line 16
+[16-Dec-2018 21:49:19 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'dne4871_denny'@'localhost' (using password: YES) in /home/dene4871/public_html/bemo/config.php on line 2
