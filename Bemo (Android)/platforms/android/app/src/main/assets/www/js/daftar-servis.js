@@ -1,7 +1,7 @@
 $('document').ready(function () {
     $.ajax({
         type: 'GET',
-        url: 'http://dennyfebrygo.com/bemo/www/php/daftar-servis.php',
+        url: ' php/daftar-servis.php',
         error: function (xhr, status, error) {
             console.log(xhr);
             var result = $.parseJSON(xhr.responseText);

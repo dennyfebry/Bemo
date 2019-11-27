@@ -1,7 +1,7 @@
 $('document').ready(function () {
     $.ajax({
         type: 'GET',
-        url: 'http://dennyfebrygo.com/bemo/www/php/daftar-montir.php',
+        url: ' php/daftar-montir.php',
         error: function (xhr, status, error) {
             console.log(xhr);
             var result = $.parseJSON(xhr.responseText);

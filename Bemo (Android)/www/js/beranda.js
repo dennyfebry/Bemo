@@ -19,7 +19,7 @@ $('document').ready(function () {
 
     $.ajax({
         type: 'GET',
-        url: 'http://dennyfebrygo.com/bemo/www/php/info.php',
+        url: 'php/info.php',
         error: function (xhr, status, error) {
             // console.log(xhr);
             var result = $.parseJSON(xhr.responseText);
@@ -74,7 +74,7 @@ $('document').ready(function () {
 
     $.ajax({
         type: 'GET',
-        url: 'http://dennyfebrygo.com/bemo/www/php/perawatan-mobil.php',
+        url: 'php/perawatan-mobil.php',
         error: function (xhr, status, error) {
             // console.log(xhr);
             var result = $.parseJSON(xhr.responseText);

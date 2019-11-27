@@ -114,7 +114,7 @@ function submitFor() {
     console.log($('#booking-form').serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://dennyfebrygo.com/bemo/www/php/ambil-antrian.php',
+        url: 'php/ambil-antrian.php',
         data: $('#booking-form').serialize(),
         async: false,
         success: function (a) {

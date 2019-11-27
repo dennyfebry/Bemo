@@ -64,7 +64,7 @@ function submitFor() {
     console.log($('#tambah-servis-form').serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://dennyfebrygo.com/bemo/www/php/tambah-servis.php',
+        url: ' php/tambah-servis.php',
         data: $('#tambah-servis-form').serialize(),
         async: false,
         success: function (a) {

@@ -34,7 +34,7 @@ function hapusForm(){
     if((userID != '') && (hakAkses == 'user')){
         $.ajax({
             type:'POST',
-            url:'http://dennyfebrygo.com/bemo/www/php/hapus-pesanan.php',
+            url:' php/hapus-pesanan.php',
             data:{userID:userID,status:statusproses},
             error: function (xhr, status, error) {
             console.log(xhr);

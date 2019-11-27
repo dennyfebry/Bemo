@@ -53,11 +53,6 @@ $(document).ready(function () {
         document.getElementById("no_hp").placeholder = "No HP";
     }
 
-    // var merk_mobil = sessionStorage.getItem('merk_mobil');
-    // if (merk_mobil !== '') {
-    //     document.getElementById("merk_mobil").value = merk_mobil;
-    // }
-
     var model_mobil = sessionStorage.getItem('model_mobil');
     console.log(model_mobil)
     if (model_mobil !== '') {
@@ -121,7 +116,7 @@ $(document).ready(function () {
                 required: true,
                 validemail: true,
                 remote: {
-                    url: "http://dennyfebrygo.com/bemo/www/php/cek-email.php",
+                    url: "php/cek-email.php",
                     type: 'POST',
                     data: {
                         email: function () {
@@ -146,7 +141,7 @@ $(document).ready(function () {
             a_plat: {
                 required: true,
                 remote: {
-                    url: "http://dennyfebrygo.com/bemo/www/php/cek-a_plat.php",
+                    url: "php/cek-a_plat.php",
                     type: 'POST',
                     data: {
                         a_plat: function () {
@@ -161,7 +156,7 @@ $(document).ready(function () {
                 minlength: 4,
                 maxlength: 4,
                 remote: {
-                    url: "http://dennyfebrygo.com/bemo/www/php/cek-b_plat.php",
+                    url: "php/cek-b_plat.php",
                     type: 'POST',
                     data: {
                         b_plat: function () {
@@ -175,7 +170,7 @@ $(document).ready(function () {
                 minlength: 3,
                 maxlength: 3,
                 remote: {
-                    url: "http://dennyfebrygo.com/bemo/www/php/cek-c_plat.php",
+                    url: "php/cek-c_plat.php",
                     type: 'POST',
                     data: {
                         c_plat: function () {
@@ -209,9 +204,6 @@ $(document).ready(function () {
             model_mobil: {
                 required: "Model mobil harus diisi"
             },
-            // no_kendaraan: {
-            //     required: "No kendaraan harus diisi"
-            // }
             a_plat: {
                 required: "Kode wilayah harus diisi",
                 remote: "Plat Nomor tidak terdaftar"
@@ -249,7 +241,7 @@ function submitFor() {
     console.log($('#update-form').serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://dennyfebrygo.com/bemo/www/php/ubah-profil.php',
+        url: 'php/ubah-profil.php',
         data: $('#update-form').serialize(),
         async: false,
         success: function (a) {

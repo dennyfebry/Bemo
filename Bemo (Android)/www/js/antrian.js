@@ -23,7 +23,7 @@ $('document').ready(function () {
 
     $.ajax({
         type: 'GET',
-        url: 'http://dennyfebrygo.com/bemo/www/php/antrian.php',
+        url: 'php/antrian.php',
         error: function (xhr, status, error) {
             // console.log(xhr);
             var result = $.parseJSON(xhr.responseText);

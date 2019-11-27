@@ -26,7 +26,7 @@ $('document').ready(function () {
     if (email != '') {
         $.ajax({
             type: 'POST',
-            url: 'http://dennyfebrygo.com/bemo/www/php/profil.php',
+            url: ' php/profil.php',
             data: { email: email },
             error: function (xhr, status, error) {
                 console.log(xhr);

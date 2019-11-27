@@ -121,7 +121,7 @@ $(document).ready(function () {
                 required: true,
                 validemail: true,
                 remote: {
-                    url: "http://dennyfebrygo.com/bemo/www/php/cek-email.php",
+                    url: " php/cek-email.php",
                     type: 'POST',
                     data: {
                         email: function () {
@@ -146,7 +146,7 @@ $(document).ready(function () {
             a_plat: {
                 required: true,
                 remote: {
-                    url: "http://dennyfebrygo.com/bemo/www/php/cek-a_plat.php",
+                    url: " php/cek-a_plat.php",
                     type: 'POST',
                     data: {
                         a_plat: function () {
@@ -161,7 +161,7 @@ $(document).ready(function () {
                 minlength: 4,
                 maxlength: 4,
                 remote: {
-                    url: "http://dennyfebrygo.com/bemo/www/php/cek-b_plat.php",
+                    url: " php/cek-b_plat.php",
                     type: 'POST',
                     data: {
                         b_plat: function () {
@@ -175,7 +175,7 @@ $(document).ready(function () {
                 minlength: 3,
                 maxlength: 3,
                 remote: {
-                    url: "http://dennyfebrygo.com/bemo/www/php/cek-c_plat.php",
+                    url: " php/cek-c_plat.php",
                     type: 'POST',
                     data: {
                         c_plat: function () {
@@ -249,7 +249,7 @@ function submitFor() {
     console.log($('#update-form').serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://dennyfebrygo.com/bemo/www/php/ubah-profil.php',
+        url: ' php/ubah-profil.php',
         data: $('#update-form').serialize(),
         async: false,
         success: function (a) {

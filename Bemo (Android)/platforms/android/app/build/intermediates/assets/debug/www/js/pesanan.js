@@ -39,7 +39,7 @@ $('document').ready(function () {
     if ((userID != '') && (hakAkses == 'user')) {
         $.ajax({
             type: 'POST',
-            url: 'http://dennyfebrygo.com/bemo/www/php/pesanan.php',
+            url: ' php/pesanan.php',
             data: { userID: userID, pesananID: pesananID },
             error: function (xhr, status, error) {
                 console.log(xhr);
@@ -101,7 +101,7 @@ $('document').ready(function () {
     } else if ((userID != '') && (hakAkses == 'montir')) {
         $.ajax({
             type: 'POST',
-            url: 'http://dennyfebrygo.com/bemo/www/php/servis-lengkap.php',
+            url: ' php/servis-lengkap.php',
             data: { userID: userID, servisID: servisID },
             // error: function (xhr, status, error) {
             //     console.log(xhr);

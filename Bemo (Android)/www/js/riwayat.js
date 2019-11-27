@@ -9,14 +9,8 @@ $('document').ready(function () {
     if ((userID != '') && (hakAkses == 'user')) {
         $.ajax({
             type: 'POST',
-            url: 'http://dennyfebrygo.com/bemo/www/php/riwayat.php',
+            url: 'php/riwayat.php',
             data: { userID: userID },
-            // error: function (xhr, status, error) {
-            // console.log(xhr);
-            //   var result = $.parseJSON(xhr.responseText);
-            //   console.log(result);
-            //   alert('Terjadi kesalahan ' + result.error);
-            // },
             success: function (data) {
                 console.log(data);
                 output = "<div class='box'><h4><center><b>Riwayat Servis</b></center></h4>";
@@ -38,7 +32,7 @@ $('document').ready(function () {
     } else if ((userID != '') && (hakAkses == 'montir')) {
         $.ajax({
             type: 'POST',
-            url: 'http://dennyfebrygo.com/bemo/www/php/riwayat-montir.php',
+            url: 'php/riwayat-montir.php',
             data: { userID: userID },
             error: function (xhr, status, error) {
                 console.log(xhr);

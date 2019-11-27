@@ -7,7 +7,7 @@ $('document').ready(function () {
 
     $.ajax({
         type: 'POST',
-        url: 'http://dennyfebrygo.com/bemo/www/php/riwayat-lengkap-montir.php',
+        url: 'php/riwayat-lengkap-montir.php',
         data: { userID: userID, riwayatID: urlParams.get('riwayatID') },
         error: function (xhr, status, error) {
             console.log(xhr);
@@ -40,8 +40,6 @@ $('document').ready(function () {
                 output += "<div class='textprofile'>" + [i + 1] + "." + data[i].nama_servis + "</div>";
                 var waktu = parseFloat(data[i].waktu_pengerjaan);
                 totalwaktu += waktu;
-                // console.log(data[i].waktu_pengerjaan);
-                // console.log(totalwaktu);
                 var harga = parseFloat(data[i].harga);
                 var bil = harga;
                 var number_string = bil.toString(),
@@ -55,8 +53,6 @@ $('document').ready(function () {
                 }
                 output += "<div class='textprofile'>  Harga : Rp" + rupiahnya + "</div>";
                 totalharga += harga
-                // console.log(data[i].harga);
-                // console.log(totalharga);
             }
             var bilangan = totalharga;
             var number_string = bilangan.toString(),
@@ -68,7 +64,6 @@ $('document').ready(function () {
                 separator = sisa ? '.' : '';
                 rupiah += separator + ribuan.join('.');
             }
-            // output += "<div class='texthistory'><b>Waktu Pegerjaan: </b>"+ wkt_mulai +" - "+ wkt_selesai +" ("+ totalwaktu +" menit)</div>";
             output += "<div class='texthistory'><b>Durasi: </b>" + totalwaktu + " menit</div>";
             output += "<div class='texthistory'><b>Total Harga    : </b>Rp" + rupiah + "</div>";
             output += "</div>";

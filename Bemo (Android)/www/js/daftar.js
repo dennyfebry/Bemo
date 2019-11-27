@@ -40,7 +40,7 @@ $(document).ready(function () {
                 required: true,
                 validemail: true,
                 remote: {
-                    url: "http://dennyfebrygo.com/bemo/www/php/cek-email.php",
+                    url: "php/cek-email.php",
                     type: 'POST',
                     data: {
                         email: function () {
@@ -98,7 +98,7 @@ function submitFor() {
     console.log($('#register-form').serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://dennyfebrygo.com/bemo/www/php/daftar.php',
+        url: 'php/daftar.php',
         data: $('#register-form').serialize(),
         async: false,
         success: function (a) {
@@ -120,14 +120,14 @@ function submitFor() {
                     console.log(temp);
                     $.ajax({
                         type: 'POST',
-                        url: 'http://dennyfebrygo.com/bemo/www/php/email-daftar.php',
+                        url: 'php/email-daftar.php',
                         data: temp,
                         error: function (xhr, status, error) {
                             console.log(xhr);
                             console.log('error');
-                              var result = $.parseJSON(xhr.responseText);
-                              console.log(result);
-                            },
+                            var result = $.parseJSON(xhr.responseText);
+                            console.log(result);
+                        },
                         success: function (b) {
                             console.log(b);
                         }

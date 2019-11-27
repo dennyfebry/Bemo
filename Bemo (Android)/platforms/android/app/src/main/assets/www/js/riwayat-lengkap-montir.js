@@ -7,7 +7,7 @@ $('document').ready(function () {
 
     $.ajax({
         type: 'POST',
-        url: 'http://dennyfebrygo.com/bemo/www/php/riwayat-lengkap-montir.php',
+        url: ' php/riwayat-lengkap-montir.php',
         data: { userID: userID, riwayatID: urlParams.get('riwayatID') },
         error: function (xhr, status, error) {
             console.log(xhr);

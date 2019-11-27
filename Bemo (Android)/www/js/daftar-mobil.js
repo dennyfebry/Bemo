@@ -1,7 +1,7 @@
 $('document').ready(function () {
     //     $.ajax({
     //         type: 'GET',
-    //         url: 'http://dennyfebrygo.com/bemo/www/php/daftar-mobil.php',
+    //         url: 'php/daftar-mobil.php',
     //         error: function (xhr, status, error) {
     //             console.log(xhr);
     //             var result = $.parseJSON(xhr.responseText);
@@ -33,7 +33,7 @@ $('document').ready(function () {
 
     //             $.ajax({
     //                 type: 'GET',
-    //                 url: 'http://dennyfebrygo.com/bemo/www/php/daftar-model.php',
+    //                 url: ' php/daftar-model.php',
     //                 error: function (xhr, status, error) {
     //                     console.log(xhr);
     //                     var result = $.parseJSON(xhr.responseText);

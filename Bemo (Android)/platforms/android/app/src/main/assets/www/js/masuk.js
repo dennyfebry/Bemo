@@ -64,7 +64,7 @@ $('document').ready(function () {
 function submitForm() {
     $.ajax({
         type: 'POST',
-        url: 'http://dennyfebrygo.com/bemo/www/php/masuk.php',
+        url: ' php/masuk.php',
         data: $('#login-form').serialize(),
         async: false,
         cache: false,

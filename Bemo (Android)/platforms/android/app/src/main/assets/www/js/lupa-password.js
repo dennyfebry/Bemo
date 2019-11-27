@@ -55,7 +55,7 @@ function submitFor() {
     console.log($('#lupa-pass-form').serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://dennyfebrygo.com/bemo/www/php/ambil-email.php',
+        url: ' php/ambil-email.php',
         data: $('#lupa-pass-form').serialize(),
         async: false,
         success: function (a) {
@@ -77,14 +77,14 @@ function submitFor() {
                     console.log(temp);
                     $.ajax({
                         type: 'POST',
-                        url: 'http://dennyfebrygo.com/bemo/www/php/email-lupa.php',
+                        url: ' php/email-lupa.php',
                         data: temp,
                         error: function (xhr, status, error) {
                             console.log(xhr);
                             console.log('error');
-                              var result = $.parseJSON(xhr.responseText);
-                              console.log(result);
-                            },
+                            var result = $.parseJSON(xhr.responseText);
+                            console.log(result);
+                        },
                         success: function (b) {
                             console.log(b);
                         }

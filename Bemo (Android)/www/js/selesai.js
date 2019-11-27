@@ -19,7 +19,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: 'POST',
-        url: 'http://dennyfebrygo.com/bemo/www/php/konfirmasi.php',
+        url: 'php/konfirmasi.php',
         data: { konfirmasiID: urlParams.get('konfirmasiID') },
         error: function (xhr, status, error) {
             console.log(xhr);
@@ -41,7 +41,7 @@ $(document).ready(function () {
 
             $.ajax({
                 type: 'POST',
-                url: 'http://dennyfebrygo.com/bemo/www/php/servis-lengkap.php',
+                url: 'php/servis-lengkap.php',
                 data: { userID: userID, servisID: urlParams.get('konfirmasiID') },
                 success: function (data) {
                     console.log(data);
@@ -227,7 +227,7 @@ function submitFor() {
     console.log($('#selesai-form').serialize())
     $.ajax({
         type: 'POST',
-        url: 'http://dennyfebrygo.com/bemo/www/php/selesai.php',
+        url: 'php/selesai.php',
         data: $('#selesai-form').serialize(),
         async: false,
         success: function (a) {
@@ -250,14 +250,14 @@ function submitFor() {
                     console.log(temp);
                     $.ajax({
                         type: 'POST',
-                        url: 'http://dennyfebrygo.com/bemo/www/php/email-selesai.php',
+                        url: 'php/email-selesai.php',
                         data: temp,
                         error: function (xhr, status, error) {
                             console.log(xhr);
                             console.log('error');
-                              var result = $.parseJSON(xhr.responseText);
-                              console.log(result);
-                            },
+                            var result = $.parseJSON(xhr.responseText);
+                            console.log(result);
+                        },
                         success: function (b) {
                             console.log(b);
                         }
