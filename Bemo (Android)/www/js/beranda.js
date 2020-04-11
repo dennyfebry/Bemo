@@ -39,7 +39,7 @@ $('document').ready(function () {
 
             logo = data[8].title;
             $('#logo').attr({
-                "src": "http://dennyfebrygo.com/bemo/adminbemo/public/img/" + logo
+                "src": "adminbemo/public/img/" + logo
             });
 
             body1 = data[0].body;
